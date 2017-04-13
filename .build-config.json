@@ -2,5 +2,5 @@
 	"main": "main",
 	"vertion": "v1.0.0",
 	"baseEntryDir": "pages",
-	"openBrowser": true
+	"openBrowser": false
 }

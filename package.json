@@ -24,5 +24,8 @@
     "vue-router": "^2.4.0",
     "vuex": "^2.2.1",
     "webpack-dev-build": "^1.0.8"
+  },
+  "dependencies": {
+    "scss-loader": "0.0.1"
   }
 }

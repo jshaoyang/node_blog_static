@@ -8,14 +8,14 @@ import State from './indexVuex.js';
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-const router = new VueRouter(Routers);
+const router = new VueRouter({ routes : Routers , mode : 'history' });
 const store = new Vuex.Store(State);
 
 new Vue({ 
 	router , store ,
 	template:`<Start/>`,
 	created () {
-		console.log(this.$store)
+		//console.log(this.$store)
 	},
 	components:{
 		Start

@@ -1,12 +1,19 @@
 <template>
-	<section>
-		<h1>Hello App!</h1>
-			<router-link to="/foo">Go to Foo</router-link>
-			<router-link to="/bar">Go to Bar</router-link>
-		</p>
+	<section class="main">
+		<article class="left_nav">
+			<ul>
+				<li><router-link to="/pages/index">首页</router-link></li>
+				<li><router-link to="/pages/new">最新 note</router-link></li>
+				<li><router-link to="/pages/hot">最热 note</router-link></li>
+				<li><router-link to="/pages/login">Buddy Login</router-link></li>
+			</ul>
+		</article>
 		<router-view></router-view>
 	</section>
 </template>
+<style lang="sass">
+	@import './index.scss';
+</style>
 <script type="text/javascript">
 	export default {
 		
