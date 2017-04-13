@@ -1,0 +1,28 @@
+{
+  "name": "blog_static",
+  "version": "1.0.0",
+  "description": "blog、vue",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp test",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh-tengfei/blog_static.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "shangtengfeis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sh-tengfei/blog_static/issues"
+  },
+  "homepage": "https://github.com/sh-tengfei/blog_static#readme",
+  "devDependencies": {
+    "vue-router": "^2.4.0",
+    "vuex": "^2.2.1",
+    "webpack-dev-build": "^1.0.8"
+  }
+}
