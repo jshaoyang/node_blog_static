@@ -6,6 +6,8 @@
 				<li><router-link to="/pages/new">最新 note</router-link></li>
 				<li><router-link to="/pages/hot">最热 note</router-link></li>
 				<li><router-link to="/pages/login">Buddy Login</router-link></li>
+				<li><form action="/upload" method="post" enctype="multipart/form-data"><input type="file" name="file"style="background:#eee"><input type="submit"></form></li>
+
 			</ul>
 		</article>
 		<router-view></router-view>

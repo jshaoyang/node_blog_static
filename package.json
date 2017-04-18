@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "gulp test",
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "build": "cross-env NODE_ENV=production node ./app.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
     "webpack-dev-build": "^1.0.8"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-qndn": "0.0.4",
     "scss-loader": "0.0.1"
   }
 }
