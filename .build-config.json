@@ -2,5 +2,6 @@
 	"main": "main",
 	"vertion": "v1.0.0",
 	"baseEntryDir": "pages",
-	"openBrowser": false
+	"openBrowser": false,
+    "staticSite":"http://onlyqing.cn:3000"
 }
