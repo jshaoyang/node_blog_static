@@ -1,7 +1,9 @@
+import List from './page/list.vue';
+import Login from './page/login.vue';
 
-import Index from './index.vue';
 const routes = [
-	{ path: '/pages/index/*', component: Index }
+    { path: '/', component: Login },
+	{ path: '/login', component: Login }
 ];
 
 export default routes;

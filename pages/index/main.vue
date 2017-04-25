@@ -1,21 +1,21 @@
 <template>
 	<section class="main">
-		<article class="left_nav">
-			<ul>
-				<li><router-link to="/pages/index">首页</router-link></li>
-				<li><router-link to="/pages/new">最新 note</router-link></li>
-				<li><router-link to="/pages/hot">最热 note</router-link></li>
-				<li><router-link to="/pages/login">Buddy Login</router-link></li>
-			</ul>
-		</article>
-		<router-view></router-view>
+		<Headers/>
+		<MainContent/>
 	</section>
 </template>
 <style lang="sass">
-	@import './index.scss';
+	@import './common.scss';
+	.main{
+		overflow: hidden;
+	}
 </style>
 <script type="text/javascript">
+	import Headers from './header.vue';
+	import MainContent from './content.vue';
 	export default {
-		
+		components:{
+			Headers , MainContent
+		}
 	}
 </script>
