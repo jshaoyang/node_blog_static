@@ -1,0 +1,44 @@
+.form_wrap {
+	width:600px;
+	margin:0 auto;
+	text-align: center;
+}
+.form{
+	padding-top: 30px;
+}
+.pony_cart{
+	width:200px;
+	border-radius: 200px;
+	margin-top:80px;
+}
+.group{
+	margin-top:10px;
+}
+.group span{
+	display:inline-block;
+	width:80px;
+}
+.group input{
+	border: 1px solid #dadada;
+	padding: 0 8px;
+	height: 36px;
+	border-radius: 4px;
+	width: 200px;
+	box-shadow: 0px 0px;
+	box-shadow: 0 0px 2px 1px rgba(0,0,0,0.1);
+}
+.submit{
+	margin-top: 10px;
+	display: inline-block;
+	height:36px;
+	line-height: 36px;
+	width:290px;
+	background:rgba(21, 150, 77, 0.9);
+	border-radius:5px;
+	margin-left:15px;
+	cursor:pointer;
+	color:#fff;
+}
+.submit:hover{
+	background:rgba(18, 119, 62, 0.9);
+}
