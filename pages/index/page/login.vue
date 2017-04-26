@@ -2,14 +2,14 @@
 	<div class="container clear">
 		<div class="form_wrap">
 			<img src="/pony_cart.jpeg" class="pony_cart">
-			<form action="/login" methods="post" class="form">
+			<form action="/login" methods="post" class="form" @submit.prevent="submit">
 				<div class="group">
 					<span>用户名：</span>
-					<input type="text" name="username" placeholder="用户名">
+					<input type="text" name="username" placeholder="用户名" v-model.trim="username">
 				</div>
 				<div class="group">
 					<span>密码：</span>
-					<input type="text" name="username" placeholder="密码">
+					<input type="password" name="username" placeholder="密码" v-model="password">
 				</div>
 				<div class="group">
 					<button type="submit" class="submit">登录</button>
@@ -28,7 +28,30 @@
 	export default{
 		data () {
 			return {
-
+				username : null,
+				password : null
+			}
+		},
+		methods:{
+			submit () {
+				if ( !this.username ) {
+					return alert('用户名为空');
+				}
+				if ( !this.password ) {
+					return alert('密码为空');
+				}
+				this.$http.post('/login',{
+					username : this.username,
+					password : this.password
+				}).then(function (req) {
+					if ( req.ok ){
+						if ( req.data.status ) {
+							req.data.url ? location.href = req.data.url : location.href = '/';
+						}else{
+							alert(req.data.massage);
+						}
+					} 
+				})
 			}
 		}
 	}
