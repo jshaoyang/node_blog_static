@@ -9,7 +9,7 @@
 				</div>
 				<div class="group">
 					<span>密码：</span>
-					<input type="text" name="username" placeholder="密码" v-model.trim="password">
+					<input type="password" name="username" placeholder="密码" v-model.trim="password">
 				</div>
 				<div class="group">
 					<span>确认密码：</span>
@@ -48,12 +48,21 @@
 				if ( this.password !== this.passwords ) {
 					return alert('输入的密码不一致')
 				}
-				this.$http.post({ 
+				this.$http.post('/register/',{ 
 					username : this.username,
-					password : this.password 
+					password :this.password 
 				}).then( req => {
-					//console.log(req)
-				}).catch( () => {
+					if ( req.ok ) {
+						if ( req.data.status ) {
+							req.data.url ? location.href = req.data.url : location.href = '/';
+						}else{
+							alert(req.data.massage);
+						}
+						//this.$store.commit('addListData', req.data);
+					}else{
+						alert('网络错误');
+					}
+				}).catch( req => {
 
 				})
 			}
