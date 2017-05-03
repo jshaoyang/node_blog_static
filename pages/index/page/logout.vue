@@ -18,7 +18,8 @@
 		width: 100px;
 		height: 36px;
 		line-height: 36px;
-			color: #fff;
+		color: #fff;
+		cursor: pointer;
 	}
 	.logout_wrap{
 		text-align: center;

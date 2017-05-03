@@ -12,7 +12,13 @@ const routes = [
 		component: List 
 	},{ 
 		path: '/home',
-		component: Home 
+		component: Home ,
+		beforeEnter: (to, from, next) => {
+			if (!store.getItem('userId')) {
+				return next('/login');
+			}
+			next();
+		}
 	},{ 
 		path: '/login', 
 		component: Login,

@@ -51,7 +51,7 @@
 					if ( req.ok ) {
 						if ( req.data.status ) {
 							sessionStorage.setItem('userId',req.data.userId);
-							this.$router.go(req.data.url ? req.data.url : '/');
+							this.$router.push(req.data.url ? req.data.url : '/')
 						}else{
 							alert(req.data.massage);
 						}
