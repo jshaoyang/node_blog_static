@@ -2,12 +2,17 @@ import List from './page/list.vue';
 import Login from './page/login.vue';
 import Register from './page/register.vue';
 import Logout from './page/logout.vue';
+import Home from './page/home.vue';
+
 const store = sessionStorage;
 
 const routes = [
 	{ 
 		path: '/',
 		component: List 
+	},{ 
+		path: '/home',
+		component: Home 
 	},{ 
 		path: '/login', 
 		component: Login,
@@ -28,7 +33,13 @@ const routes = [
 		}
 	},{ 
 		path: '/logout', 
-		component: Logout
+		component: Logout,
+		beforeEnter: (to, from, next) => {
+			if (!store.getItem('userId')) {
+				return next('/');
+			}
+			next();
+		}
 	}
 ];
 

@@ -2,10 +2,15 @@
 	<header class="header">
 		<div class="container clear">
 			<router-link to="/" class="logo">pony&nbsp;cart</router-link>
-			<div class="user_pass">
-				<router-link to="/login" class="login" v-show="!userId">登录</router-link>
-				<router-link to="/register" class="register" v-show="!userId">注册</router-link>
-				<router-link to="/logout" class="login" v-show="userId">退出登录</router-link>
+			<div class="user_pass" >
+				<template v-if="!userId">
+					<router-link to="/login" class="login" >登录</router-link>
+					<router-link to="/register" class="register">注册</router-link>
+				</template>
+				<template v-else>
+					<router-link to="/home" class="login">个人中心</router-link>
+					<router-link to="/logout" class="login">退出登录</router-link>
+				</template>
 			</div>
 		</div>
 	</header>
@@ -14,13 +19,13 @@
 	export default {
 		data () {
 			return {
-				//userId : userId
+				
 			}
 		},
-		computed : {
-			userId () {
-				console.log(this.$store.userId)
-				return this.$store.userId;
+		props:{
+			userId : {
+				type:String,
+				default:null
 			}
 		}
 	}
@@ -32,6 +37,7 @@
 		height:40px;
 		background:rgba(21, 99, 150, 0.9);
 		box-shadow: 0 1px 1px #aaa;
+		z-index: 2;
 	}
 	.logo{
 		text-decoration: none;

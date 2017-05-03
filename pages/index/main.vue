@@ -1,7 +1,6 @@
 <template>
 	<section class="main">
-		<Headers/>
-		<MainContent/>
+		<router-view></router-view>
 	</section>
 </template>
 <style lang="sass">
@@ -9,13 +8,11 @@
 	.main{
 		overflow: hidden;
 	}
+	.main_content{
+    	padding-bottom: 50px;
+	}
 </style>
 <script type="text/javascript">
-	import Headers from './header.vue';
-	import MainContent from './content.vue';
 	export default {
-		components:{
-			Headers , MainContent
-		}
 	}
 </script>

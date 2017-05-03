@@ -1,27 +1,30 @@
 <template>
-	<div class="container clear">
-		<div class="form_wrap">
-			<img src="/pony_cart.jpeg" class="pony_cart">
-			<form action="/login" methods="post" class="form" @submit.prevent="submit">
-				<div class="group">
-					<span>用户名：</span>
-					<input type="text" name="username" placeholder="用户名" v-model.trim="username">
-				</div>
-				<div class="group">
-					<span>密码：</span>
-					<input type="password" name="username" placeholder="密码" v-model.trim="password">
-				</div>
-				<div class="group">
-					<span>确认密码：</span>
-					<input type="text" name="username" placeholder="密码" v-model.trim="passwords">
-				</div>
-				<div class="group">
-					<button type="submit" class="submit">注册</button>
-				</div>
-				<div class="group">
-					<a href="javascript:history.go(-1);" class="submit">返回</a>
-				</div>
-			</form>
+	<div class="main_content">
+		<Headers/>
+		<div class="container clear">
+			<div class="form_wrap list">
+				<img src="/pony_cart.jpeg" class="pony_cart">
+				<form action="/login" methods="post" class="form" @submit.prevent="submit">
+					<div class="group">
+						<span>用户名：</span>
+						<input type="text" name="username" placeholder="用户名" v-model.trim="username">
+					</div>
+					<div class="group">
+						<span>密码：</span>
+						<input type="password" name="username" placeholder="密码" v-model.trim="password">
+					</div>
+					<div class="group">
+						<span>确认密码：</span>
+						<input type="text" name="username" placeholder="密码" v-model.trim="passwords">
+					</div>
+					<div class="group">
+						<button type="submit" class="submit">注册</button>
+					</div>
+					<div class="group">
+						<a href="javascript:history.go(-1);" class="submit">返回</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 </template>
@@ -29,6 +32,7 @@
 	@import './form.css';
 </style>
 <script type="text/javascript">
+	import Headers from './common/header.vue';
 	export default{
 		data () {
 			return {
@@ -59,7 +63,6 @@
 						}else{
 							alert(req.data.massage);
 						}
-						//this.$store.commit('addListData', req.data);
 					}else{
 						alert('网络错误');
 					}
@@ -67,6 +70,9 @@
 
 				})
 			}
+		},
+		components:{
+			Headers
 		}
 	}
 </script>
