@@ -54,7 +54,8 @@
 				}).then( req => {
 					if ( req.ok ) {
 						if ( req.data.status ) {
-							req.data.url ? location.href = req.data.url : location.href = '/';
+							sessionStorage.setItem('userId',req.data.userId);
+							this.$router.go(req.data.url ? req.data.url : '/');
 						}else{
 							alert(req.data.massage);
 						}

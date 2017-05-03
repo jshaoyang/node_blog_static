@@ -44,9 +44,11 @@
 					username : this.username,
 					password : this.password
 				}).then(function (req) {
-					if ( req.ok ){
+					if ( req.ok ) {
 						if ( req.data.status ) {
-							req.data.url ? location.href = req.data.url : location.href = '/';
+							this.$store.commit('addLogoInId',req.data.userId);
+							sessionStorage.setItem('userId',req.data.userId);
+							this.$router.go(req.data.url ? req.data.url : '/');
 						}else{
 							alert(req.data.massage);
 						}

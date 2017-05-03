@@ -3,12 +3,28 @@
 		<div class="container clear">
 			<router-link to="/" class="logo">pony&nbsp;cart</router-link>
 			<div class="user_pass">
-				<router-link to="/login" class="login">登录</router-link>
-				<router-link to="/register" class="register">注册</router-link>
+				<router-link to="/login" class="login" v-show="!userId">登录</router-link>
+				<router-link to="/register" class="register" v-show="!userId">注册</router-link>
+				<router-link to="/logout" class="login" v-show="userId">退出登录</router-link>
 			</div>
 		</div>
 	</header>
 </template>
+<script type="text/javascript">
+	export default {
+		data () {
+			return {
+				//userId : userId
+			}
+		},
+		computed : {
+			userId () {
+				console.log(this.$store.userId)
+				return this.$store.userId;
+			}
+		}
+	}
+</script>
 <style type="sass">
 	.header{
 		position: fixed;

@@ -17,7 +17,8 @@ new Vue({
 	router , store ,
 	template:`<Start/>`,
 	created () {
-		//console.log(this.$store)
+        let userId = sessionStorage.getItem('userId');
+        this.$store.commit('addLogoInId',userId);
 	},
 	components:{
 		Start
