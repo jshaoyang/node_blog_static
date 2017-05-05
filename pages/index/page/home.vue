@@ -10,7 +10,7 @@
 						<router-link to="/article" class="arcicle_t">发布文章</router-link>
 					</button>
 					<button class="add_article">
-						<router-link to="/version" class="arcicle_t">版本发布</router-link>
+						<a href="/version" class="arcicle_t">版本发布</a>
 					</button>
 				</div>
 			</div>
