@@ -44,6 +44,12 @@
 				if ( !this.password ) {
 					return alert('密码为空');
 				}
+				if ( this.username.length < 4 ) {
+					return alert('用户不能小于四位');
+				}
+				if ( this.password.length < 6 ) {
+					return alert('密码不能小于六位');
+				}
 				this.$http.post('/login',{
 					username : this.username,
 					password : this.password

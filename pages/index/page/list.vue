@@ -4,10 +4,12 @@
 		<div class="container clear list">
 			<ul class="article_list">
 				<li class="item" v-for="( i ,e ) in listShow">
-					<router-link to="/detail/:id" class="arcicle_t">{{i.title}}</router-link>
+					<div class="arcicle_t">
+						<router-link :to="'/detail/'+i.index">{{i.title}}</router-link>
+					</div>
 					<div class="content">{{i.value}}</div>
 					<div class="artcle_f">
-						<a href="/user/id" class="user">用户{{i.userId}}</a>
+						<a :href="'/user/' + i.username" class="user" v-if="i.username">用户：{{i.username}}</a>
 					</div>
 				</li>
 			</ul>
@@ -85,9 +87,9 @@
 	}
 	.arcicle_t{
 		max-width: 520px;
-		padding-bottom: 5px;	
+		padding-bottom: 15px;	
 	}
-	.arcicle_t:hover{
+	.arcicle_t a:hover{
 		color: #268800;
 		cursor: pointer;
 	}

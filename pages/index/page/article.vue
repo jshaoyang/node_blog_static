@@ -2,9 +2,9 @@
 	<div class="main_content">
 		<Headers :userId="getUserId()"/>
 		<div class="article_wrap container">
-			<h1 class="title">文章发布 <span class="username">{{username}}</span></h1>
+			<h1 class="title">文章发布 <span class="username">{{username}}：您已登录！</span></h1>
 			<form method="post" action="/article" @submit.prevent="submit">
-				<div class="input_wrap">
+				<div class="input_wrap clear">
 					<span class="title_name">标题：</span>
 					<input type="text" class="title_input" required="required" name="title" v-model.trim="title">
 				</div>
@@ -22,22 +22,33 @@
 	export default{
 		data () {
 			return {
-				username:'sss',
+				username:'',
 				title:'',
 				value:''
 			}
+		},
+		created () {
+			this.$http.post('/article/info').then((res)=>{
+					if (res.data.status) {
+						var data = res.data.data;
+						this.username = data.username;
+						return document.title = data.title;
+					}
+					alert(res.data.massage)
+				})
 		},
 		methods:{
 			getUserId () {
 				return sessionStorage.getItem('userId');
 			},
 			submit () {
-				this.$http.post('/article', {
+				this.$http.post('/article/publish', {
 					title:this.title,
 					value:this.value
 				}).then((res)=>{
 					if (res.data.status) {
-						return alert(res.data.massage)
+						alert(res.data.massage);
+						return location.reload();
 					}
 					alert(res.data.massage);
 				})
@@ -73,13 +84,13 @@
 		padding:5px;
 		box-sizing:border-box;
 		float: left;
+		text-indent:2em;
 	}
 	.input_wrap{
-		overflow: hidden;
 		margin-bottom: 30px;
 		text-align: center;
 		.submit{
-			margin:0;
+			margin-top:20px;
 		}
 	}
 	.title_name{
@@ -98,5 +109,9 @@
 	    padding: 5px;
 	    box-sizing: border-box;
 	    float: left;
+	}
+	.title_input:focus,.input_text:focus{
+		border:1px solid #2e8074;
+		box-shadow:0px 0px 3px 1px #2e8074;
 	}
 </style>
