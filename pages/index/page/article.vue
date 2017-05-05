@@ -36,7 +36,10 @@
 					title:this.title,
 					value:this.value
 				}).then((res)=>{
-					console.log(res)
+					if (res.data.status) {
+						return alert(res.data.massage)
+					}
+					alert(res.data.massage);
 				})
 			}
 		},
