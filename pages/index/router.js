@@ -3,6 +3,7 @@ import Login from './page/login.vue';
 import Register from './page/register.vue';
 import Logout from './page/logout.vue';
 import Home from './page/home.vue';
+import Article from './page/article.vue';
 
 const store = sessionStorage;
 
@@ -43,6 +44,15 @@ const routes = [
 		beforeEnter: (to, from, next) => {
 			if (!store.getItem('userId')) {
 				return next('/');
+			}
+			next();
+		}
+	},{ 
+		path: '/article', 
+		component: Article,
+		beforeEnter: (to, from, next) => {
+			if (!store.getItem('userId')) {
+				return next('/login');
 			}
 			next();
 		}

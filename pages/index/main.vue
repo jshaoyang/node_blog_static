@@ -1,7 +1,5 @@
 <template>
-	<section class="main">
-		<router-view></router-view>
-	</section>
+	<router-view></router-view>
 </template>
 <style lang="sass">
 	@import './common.scss';
