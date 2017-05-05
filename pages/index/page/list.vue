@@ -3,11 +3,11 @@
 		<Headers :userId="getUserId()"/>
 		<div class="container clear list">
 			<ul class="article_list">
-				<li class="item">
-					<router-link to="/article/:id" class="arcicle_t">最新文章asdfad{{name}}</router-link>
-					<div class="content">用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户用户</div>
+				<li class="item" v-for="( i ,e ) in listShow">
+					<router-link to="/detail/:id" class="arcicle_t">{{i.title}}</router-link>
+					<div class="content">{{i.value}}</div>
 					<div class="artcle_f">
-						<a href="/user/id" class="user">用户</a>
+						<a href="/user/id" class="user">用户{{i.userId}}</a>
 					</div>
 				</li>
 			</ul>
@@ -19,6 +19,42 @@
 		</div>
 	</div>
 </template>
+<script type="text/javascript">
+	import Headers from './common/header.vue';
+	export default{
+		data () {
+			return {
+				pages : 0,
+				listShow : null
+			}
+		},
+		methods:{
+			getUserId () {
+				return sessionStorage.getItem('userId');
+			},
+			getDate () {
+				this.$http.post('/',{
+					pages:this.pages
+				}).then(function (res) {
+					if (res.data.status) {
+						this.listShow = res.data.data;
+						return this.$store.commit('addListData',res.data.data);
+					}
+					alert(res.data.massage);
+				})
+			}
+		},
+		created () {
+			this.getDate();
+		},
+		computed:{
+
+		},
+		components:{
+			Headers
+		}
+	}
+</script>
 <style type="text/css">
 	.article_list{
 		float:left;
@@ -79,21 +115,3 @@
 		padding-top: 60px;
 	}
 </style>
-<script type="text/javascript">
-	import Headers from './common/header.vue';
-	export default{
-		data () {
-			return {
-				name:123
-			}
-		},
-		methods:{
-			getUserId () {
-				return sessionStorage.getItem('userId');
-			}
-		},
-		components:{
-			Headers
-		}
-	}
-</script>
