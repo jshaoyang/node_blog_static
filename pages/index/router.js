@@ -4,6 +4,7 @@ import Register from './page/register.vue';
 import Logout from './page/logout.vue';
 import Home from './page/home.vue';
 import Article from './page/article.vue';
+import Detail from './page/detail.vue';
 
 const store = sessionStorage;
 
@@ -11,6 +12,9 @@ const routes = [
 	{ 
 		path: '/',
 		component: List 
+	},{ 
+		path: '/detail/:id', 
+		component: Detail
 	},{ 
 		path: '/home',
 		component: Home ,
