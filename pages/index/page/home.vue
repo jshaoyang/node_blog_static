@@ -12,6 +12,9 @@
 					<button class="add_article">
 						<a href="/version" class="arcicle_t">版本发布</a>
 					</button>
+					<button class="add_article">
+						<router-link to="/perfect" class="arcicle_t">完善信息</router-link>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -23,8 +26,8 @@
 		overflow: hidden;
 	}
 	.userImg{
-		width: 400px;
-		height: 400px;
+		width: 340px;
+		height: 340px;
 		border-radius: 200px;
 		float: left;
 		margin-top: 40px;
@@ -39,15 +42,15 @@
 		}
 	}
 	.add_article{
-		margin-top: 60px;
+		margin-top: 40px;
 		margin-right:15px;
-		padding: 10px 20px;
+		padding: 6px 14px;
 		border-radius: 15px;
 		cursor: pointer;
 		background: rgba(21, 99, 150, 0.9);
 	}
 	.add_article a{
-		font-size: 30px;
+		font-size: 22px;
 		color:#bdbdbd;;
 		font-weight: normal;
 	}

@@ -17,8 +17,12 @@
 	.view-leave-active {
 		transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 	}
-	.view-enter, .view-leave-to{
-		transform: translateX(-50%);
+	.view-enter{
+		transform: translateX(100%);
+		margin-right:-100%;
+	}
+	.view-leave-to{
+		transform: translateX(-100%);
 	}
 </style>
 <script type="text/javascript">

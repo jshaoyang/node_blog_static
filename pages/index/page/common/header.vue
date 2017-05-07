@@ -66,6 +66,7 @@
 		vertical-align: top;
 		letter-spacing: normal;
 		word-spacing: normal;
+		cursor: pointer;
 	}
 	.login:hover,.register:hover{
 		color:#ffffff;
