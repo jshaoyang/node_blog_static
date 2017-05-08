@@ -2,13 +2,13 @@
 	<header class="header">
 		<div class="container clear">
 			<router-link to="/" class="logo">pony&nbsp;cart</router-link>
-			<div class="user_pass" >
+			<div class="user_pass">
 				<template v-if="!userId">
-					<router-link to="/login" class="login" >登录</router-link>
+					<router-link to="/login" class="login">登录</router-link>
 					<router-link to="/register" class="register">注册</router-link>
 				</template>
 				<template v-else>
-					<router-link to="/home" class="login">个人中心</router-link>
+					<router-link :to="'/home/'+getUserName()" class="login">个人中心</router-link>
 					<router-link to="/logout" class="login">退出登录</router-link>
 				</template>
 			</div>
@@ -20,6 +20,14 @@
 		data () {
 			return {
 				
+			}
+		},
+		computed: {
+			
+		},
+		methods : {
+			getUserName () {
+				return sessionStorage.getItem('username');
 			}
 		},
 		props:{
