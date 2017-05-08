@@ -9,7 +9,7 @@
 					</div>
 					<div class="content">{{i.value}}</div>
 					<div class="artcle_f">
-						<a :href="'/user/' + i.username" class="user" v-if="i.username">用户：{{i.username}}</a>
+						<a :href="'/home/' + i.username" class="user" v-if="i.name">用户：{{i.name}}</a>
 					</div>
 				</li>
 			</ul>
