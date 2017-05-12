@@ -17,7 +17,7 @@ const routes = [
 		path: '/detail/:id', 
 		component: Detail
 	},{ 
-		path: '/home',
+		path: '/home/:name',
 		component: Home ,
 		beforeEnter: (to, from, next) => {
 			if (!store.getItem('userId')) {
