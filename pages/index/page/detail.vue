@@ -11,9 +11,7 @@
 			<div class="detailTitle">
 				{{title}}
 			</div>
-			<div class="detailContent">
-				{{content}}
-			</div>
+			<div class="detailContent" v-html="content"></div>
 		</div>
 	</div>
 </template>
