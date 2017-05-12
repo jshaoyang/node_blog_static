@@ -39,7 +39,7 @@
 					var data = res.data.data;
 					this.username = data.username;
 					this.title = data.title;
-					return this.content = data.value;
+					return this.content = data.value.replace(/\n/g,'<br/>').replace(/\s/g,'&nbsp;');
 				}
 				alert(res.data.massage);
 			});
