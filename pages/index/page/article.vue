@@ -6,11 +6,11 @@
 			<form method="post" action="/article" @submit.prevent="submit">
 				<div class="input_wrap clear">
 					<span class="title_name">标题：</span>
-					<input type="text" class="title_input" required="required" name="title" v-model.trim="title">
+					<input type="text" class="title_input" required="required" name="title" v-model="title">
 				</div>
 				<div class="input_wrap">
 					<span class="title_name">文章：</span>
-					<textarea class="input_text" name="value" required="required" v-model.trim="value"></textarea>
+					<textarea class="input_text" name="value" required="required" v-model="value"></textarea>
 				</div>
 				<div class="input_wrap"><button class="submit">提交</button></div>
 			</form>
