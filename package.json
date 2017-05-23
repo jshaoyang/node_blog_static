@@ -24,7 +24,7 @@
   "devDependencies": {
     "vue-router": "^2.4.0",
     "vuex": "^2.2.1",
-    "webpack-dev-build": "^1.0.8"
+    "webpack-dev-build": "^1.1.6"
   },
   "dependencies": {
     "gulp": "^3.9.1",
